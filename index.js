@@ -38,3 +38,12 @@ const addNewTask = (event) => {
     const dateTime = tasksDateTime.value;
     // run form validation during task submission 
     validFormFieldInput(name, description, category, dateTime, status);
+    // if task field is entered correctly, render created task to section
+    if (valid === true) {
+        task.addTask(name, description, category, dateTime, status);
+        task.render();
+        task.save();
+    }
+    else {
+        return;
+    }
