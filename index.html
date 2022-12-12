@@ -50,6 +50,21 @@
                         Assign your task to a category!
                     </div>
                 </div>
+                <div class="form-row">
+                    <!-- Tasks Status -->
+                    <div class="form-group col">
+                        <label for="tasksStatus" class="form-label">Status</label>
+                        <select class="form-control" name="currentStatus" id="tasksStatus">
+                            <option selected disabled>Click for options</option>
+                            <option value="TO DO">TO DO</option>
+                            <option value="IN PROGRESS">IN PROGRESS</option>
+                            <option value="REVIEW">REVIEW</option>
+                        </select>
+                        <div id="statusAlert" class="alert alert-danger" role="alert">
+                            Select your status!
+                        </div>
+                    </div>
+                </div>
                 
             </form>
             </div>
