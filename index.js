@@ -19,3 +19,6 @@ statusAlert.hidden = true;
 
 const dateAlert = document.getElementById('dateAlert');
 dateAlert.hidden = true;
+
+// assign tasks form to variable for easy readability
+const taskForm = document.getElementById('newTaskForm');
