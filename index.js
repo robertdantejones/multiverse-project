@@ -36,3 +36,5 @@ const addNewTask = (event) => {
     const category = tasksCategory.value;
     const status = tasksStatus.value;
     const dateTime = tasksDateTime.value;
+    // run form validation during task submission 
+    validFormFieldInput(name, description, category, dateTime, status);
