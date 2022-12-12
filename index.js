@@ -109,3 +109,15 @@ tasksList.addEventListener('click', (event) => {
         task.render();
         task.save();
     }
+    // delete task
+    if (event.target.classList.contains('delete-button')) {
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+        console.log(parentTask);
+
+        const taskId = Number(parentTask.dataset.taskId);
+        task.deleteTask(taskId);
+        task.save();
+        task.render();
+    };
+    
+})
