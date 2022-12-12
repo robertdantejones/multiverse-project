@@ -22,3 +22,17 @@ dateAlert.hidden = true;
 
 // assign tasks form to variable for easy readability
 const taskForm = document.getElementById('newTaskForm');
+// create a function to add new tasks 
+const addNewTask = (event) => {
+    event.preventDefault();
+    const tasksName = document.getElementById('newTaskName');
+    const tasksDescription = document.getElementById('tasksDescription');
+    const tasksCategory = document.getElementById('taskCategory');
+    const tasksStatus = document.getElementById('tasksStatus');
+    const tasksDateTime = document.getElementById('tasksDateTime');
+
+    const name = tasksName.value;
+    const description = tasksDescription.value;
+    const category = tasksCategory.value;
+    const status = tasksStatus.value;
+    const dateTime = tasksDateTime.value;
