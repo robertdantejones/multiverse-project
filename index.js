@@ -67,3 +67,5 @@ const addNewTask = (event) => {
     // console.log(task.getTaskById(0));
     
 }
+// run addNewTask on submit 
+taskForm.addEventListener('submit', addNewTask);
