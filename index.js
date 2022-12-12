@@ -47,3 +47,23 @@ const addNewTask = (event) => {
     else {
         return;
     }
+
+    //clear task form on submit
+    nameAlert.hidden = true;
+    describeAlert.hidden = true;
+    categoryAlert.hidden = true;
+    statusAlert.hidden = true;
+    dateAlert.hidden = true;
+    
+
+
+    tasksName.value = '';
+    tasksDescription.value = '';
+    tasksCategory.value = '';
+    tasksStatus.value = '';
+    tasksDateTime.value = '';
+
+    valid = false; 
+    // console.log(task.getTaskById(0));
+    
+}
