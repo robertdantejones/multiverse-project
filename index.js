@@ -93,3 +93,19 @@ const validFormFieldInput = (name, description, category, dateTime, status) => {
     }
     return valid;
 };
+
+const tasksList = document.querySelector('#currentTaskList');
+tasksList.addEventListener('click', (event) => {
+    // mark task as done
+    if(event.target.classList.contains('done-button')) {
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
+        console.log(parentTask);
+
+        const taskId = Number(parentTask.dataset.taskId);
+        const _task = task.getTaskById(taskId);
+        
+        console.log(_task);
+        _task.status ='DONE';
+        task.render();
+        task.save();
+    }
