@@ -69,3 +69,27 @@ const addNewTask = (event) => {
 }
 // run addNewTask on submit 
 taskForm.addEventListener('submit', addNewTask);
+
+// form validation 
+const validFormFieldInput = (name, description, category, dateTime, status) => {
+    // if input field(s) is empty, unhide alert
+    if(name === null || name === '') {
+        nameAlert.hidden = false;
+    } 
+    else if (description === null || description === '') {
+        describeAlert.hidden = false;
+    }
+    else if (category === null || category === '') {
+        categoryAlert.hidden = false;
+    }
+    else if (dateTime === null || dateTime === '') {
+        dateAlert.hidden = false;
+    }
+    else if (status === null || status === '') {
+        statusAlert.hidden = false;
+    }
+    else {
+       valid = true;
+    }
+    return valid;
+};
