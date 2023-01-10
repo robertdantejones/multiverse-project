@@ -64,6 +64,19 @@ class TaskManager {
 
    // render to current task section
    render () {
-    
+    const tasksHtmlList = [];
+        // loop over TaskManager's task 
+        for (let i = 0; i < this.tasks.length; i++) {
+            // storing user's tasks info to a variable 
+            const currentTask = this.tasks[i];
+            // make date human readable 
+            const date = new Date(currentTask.dueDate);
+
+            const formattedDate = date.getMonth() + '/' + date.getDate() + '/' + date.getFullYear();
+            // store user inputs to variable
+            const taskHtml = createTaskHtml(currentTask.name, currentTask.description, currentTask.assignedTo, formattedDate, currentTask.status, currentTask.id); 
+            // push user input to tasks html list
+            tasksHtmlList.push(taskHtml);
+        }
    }
 };
