@@ -92,4 +92,12 @@ class TaskManager {
     document.querySelector("#currentTaskList").innerHTML = taskHtml;
   }
   
+   // saves user's tasks to device local storage 
+   save () {
+    const savedTasks = this.tasks;
+    const tasksJson = JSON.stringify(savedTasks);
+    localStorage.setItem("tasks", tasksJson);
+    const savedId = String(this.currentId);
+    localStorage.setItem("currentId", savedId);
+  }
 };
