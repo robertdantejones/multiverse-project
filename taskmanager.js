@@ -62,5 +62,8 @@ class TaskManager {
     this.tasks = newTasks;
   }
 
-  
+   // render to current task section
+   render () {
+    
+   }
 };
