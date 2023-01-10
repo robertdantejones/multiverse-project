@@ -20,5 +20,8 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
 };
 // class to manage tasks 
 class TaskManager {
-  
+  constructor(currentId = 0){
+        this.tasks=[];
+        this.currentId = currentId;
+    }
   };
