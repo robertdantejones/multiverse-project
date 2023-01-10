@@ -18,3 +18,7 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
    </div>
  </li>`;
 };
+// class to manage tasks 
+class TaskManager {
+  
+  };
