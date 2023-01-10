@@ -23,7 +23,7 @@ class TaskManager {
   constructor(currentId = 0){
         this.tasks=[];
         this.currentId = currentId;
-    }
+    };
 
     // method to add tasks 
     addTask (name, description, assignedTo, dueDate, status) {
@@ -34,5 +34,10 @@ class TaskManager {
             assignedTo: assignedTo,
             dueDate: dueDate,
             status: status
-        }
+        };
+        // push created tasks into tasks array
+         this.tasks.push(task);
+      }
+
+      
   };
