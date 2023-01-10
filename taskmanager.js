@@ -20,47 +20,47 @@ const createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
 };
 // class to manage tasks 
 class TaskManager {
-  constructor(currentId = 0){
-        this.tasks=[];
-        this.currentId = currentId;
+  constructor(currentId = 0) {
+    this.tasks = [];
+    this.currentId = currentId;
+  }
+
+  // method to add tasks
+  addTask(name, description, assignedTo, dueDate, status) {
+    const task = {
+      id: this.currentId++,
+      name: name,
+      description: description,
+      assignedTo: assignedTo,
+      dueDate: dueDate,
+      status: status,
     };
+    // push created tasks into tasks array
+    this.tasks.push(task);
+  }
 
-    // method to add tasks 
-    addTask (name, description, assignedTo, dueDate, status) {
-        const task = {
-            id : this.currentId++,
-            name: name,
-            description: description,
-            assignedTo: assignedTo,
-            dueDate: dueDate,
-            status: status
-        };
-        // push created tasks into tasks array
-         this.tasks.push(task);
+  getTaskById(taskId) {
+    let foundTask;
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      if (task.id === taskId) {
+        foundTask = task;
       }
-
-      getTaskById (taskId) {
-        let foundTask; 
-        for (let i = 0; i < this.tasks.length; i++) {
-          const task = this.tasks[i];
-          if (task.id === taskId) {
-            foundTask = task;
-          }
-        }
-        return foundTask;
-      }
-
-    // method deletes a task
-    deleteTask (taskId) {
-      const newTasks = [];
-      for (let i = 0; i < this.tasks.length; i++) {
-        const task = this.tasks[i];
-        if (task.id != taskId) {
-          newTasks.push(task);
-        };
-      }
-      this.tasks = newTasks;
     }
+    return foundTask;
+  }
 
-    
-  };
+  // method deletes a task
+  deleteTask(taskId) {
+    const newTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      if (task.id != taskId) {
+        newTasks.push(task);
+      }
+    }
+    this.tasks = newTasks;
+  }
+
+  
+};
