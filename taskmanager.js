@@ -91,7 +91,7 @@ class TaskManager {
     // placing formatted task into current task list section of page
     document.querySelector("#currentTaskList").innerHTML = taskHtml;
   }
-  
+
    // saves user's tasks to device local storage 
    save () {
     const savedTasks = this.tasks;
@@ -99,5 +99,17 @@ class TaskManager {
     localStorage.setItem("tasks", tasksJson);
     const savedId = String(this.currentId);
     localStorage.setItem("currentId", savedId);
+  }
+  // loads tasks saved in device's local storage
+  load () {
+    if (localStorage.getItem("tasks")){
+      const tasksJson = localStorage.getItem("tasks");
+      this.tasks = JSON.parse(tasksJson);
+    };
+    if (localStorage.getItem("currentId")) {
+      const savedId = localStorage.getItem("currentId");
+      this.currentId = Number(savedId);
+    };
+    
   }
 };
