@@ -24,4 +24,15 @@ class TaskManager {
         this.tasks=[];
         this.currentId = currentId;
     }
+
+    // method to add tasks 
+    addTask (name, description, assignedTo, dueDate, status) {
+        const task = {
+            id : this.currentId++,
+            name: name,
+            description: description,
+            assignedTo: assignedTo,
+            dueDate: dueDate,
+            status: status
+        }
   };
